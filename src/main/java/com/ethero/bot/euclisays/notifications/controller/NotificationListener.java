@@ -22,6 +22,7 @@ public class NotificationListener {
     @RequestMapping(method = RequestMethod.POST, value = "/receive")
     public void getNotification(@RequestBody Notification notification) throws InterruptedException {
         Thread.sleep(1000); // simulated delay
+        System.out.println("sending");
         this.template.convertAndSend("/golden/notification", notification);
     }
 
